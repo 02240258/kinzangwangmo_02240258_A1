@@ -1,25 +1,26 @@
 # Function 1: Prime Number Sum Calculator
-def prime_sum(start, end):
+def prime_sum(start, end):    # Helper function to check whether number is prime
     def is_prime(n):
-        if n <= 1:
+        if n <= 1:       # Numbers <= 1 are not prime
             return False
-        for i in range(2, n):
-            if n % i == 0:
+        for i in range(2, n):    # Check divisibility from 2 to n-1
+            if n % i == 0:        # If divisible, n is not prime
                 return False
-        return True
+        return True         # n is prime if no divisors found
     
-    total = 0
-    for num in range(start, end + 1):
-        if is_prime(num):
-            total += num
-    return total
+    total = 0       # Initialize sum of prime numbers
+    for num in range(start, end + 1):   # Loop from start to end
+        if is_prime(num):    # Check if current number is prime
+            total += num     # Add prime to total sum
+    return total       # Return the sum of primes
+
 
 # Function 2: Length Unit Converter
 def length_converter(value, direction):
-    if direction.lower() == 'm':
-        return round(value * 3.28084, 2)  # meters to feet
+    if direction.lower() == 'm':  
+        return round(value * 3.28084, 2)  # change meters to feet
     elif direction.lower() == 'f':
-        return round(value / 3.28084, 2)  # feet to meters
+        return round(value / 3.28084, 2)  # change feet to meters
     else:
         return "Invalid direction"
 
